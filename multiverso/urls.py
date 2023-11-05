@@ -17,9 +17,6 @@ Including another URLconf
 # urls.py
 from django.contrib import admin
 from django.urls import path
-from niveles.views import mi_multiverso
+from niveles.views import inicio
 
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('mi_multiverso/', mi_multiverso, name='mi_multiverso'),
-]
+urlpatterns = [path("", inicio, name="home")]
