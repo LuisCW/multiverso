@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/nivel1.css' %}"
+    />
+  </head>
+  <body>
+    <header>
+      <a href="#" class="logo">Multiverso</a>
+      <ul>
+        <li>
+          <a href="" class="active">CustomWorspace</a>
+        </li>
+        <li>
+          <a href="">Acerca</a>
+        </li>
+        <li>
+          <a href="">Contacto</a>
+        </li>
+      </ul>
+    </header>
+    <section>
+      <!--<img src="Recursos/cielito.jpg" id="cielito">-->
+
+      <img src="{% static 'images/Glapflap.jpg' %}" class="planeta" />
+      <h2 class="text">Planeta Alpha Centaurus</h2>
+      <script
+        type="text/javascript"
+        async
+        src="https://tenor.com/embed.js"
+      ></script>
+    </section>
+    <div class="sect-2">
+      <h2>Viaja a otros planetas</h2>
+      <p>
+        Glapflap es un planeta mencionado por Rick en el episodio "The Wedding
+        Squanchers". Rick describe rápidamente cómo Birdperson luchó contra los
+        Gromflomites en Blood Ridge, en la tercera luna de Glapflap1. Los años
+        luz que se dice que este planeta está lejos del espacio civilizado es
+        aproximadamente equivalente a la cantidad de tiempo.
+      </p>
+    </div>
+    <form method="POST" action="{% url 'nivel1' %}">
+      <div class="btn-cambio">
+        {% csrf_token %}
+        <button type="submit" name="boton_izquierda" value="izquierda">
+          Botón Izquierda
+        </button>
+        <button type="submit" name="boton_derecha" value="derecha">
+          Botón Derecha
+        </button>
+      </div>
+    </form>
+  </body>
+</html>

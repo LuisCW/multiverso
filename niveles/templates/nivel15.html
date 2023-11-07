@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/nivel1.css' %}"
+    />
+  </head>
+  <body>
+    <header>
+      <a href="#" class="logo">Multiverso</a>
+      <ul>
+        <li>
+          <a href="" class="active">CustomWorspace</a>
+        </li>
+        <li>
+          <a href="">Acerca</a>
+        </li>
+        <li>
+          <a href="">Contacto</a>
+        </li>
+      </ul>
+    </header>
+    <section>
+      <!--<img src="Recursos/cielito.jpg" id="cielito">-->
+
+      <img src="{% static 'images/Garzorpazorp.jpg' %}" class="planeta" />
+      <h2 class="text">Planeta Garzorpazorp</h2>
+      <script
+        type="text/javascript"
+        async
+        src="https://tenor.com/embed.js"
+      ></script>
+    </section>
+    <div class="sect-2">
+      <h2>Viaja a otros planetas</h2>
+      <p>
+        Gazorpazorp es el planeta natal de los Gazorpians, tanto masculinos como
+        femeninos1. Se encuentra en la Galaxia de Andrómeda. Como resultado de
+        conflictos, los dos géneros se dividieron. Mientras las mujeres
+        florecieron y avanzaron, los hombres se volvieron primitivos1. Las
+        mujeres crearon robots sexuales de incubación para continuar el
+        crecimiento de su raza sin tener que procrear con los hombres,
+        recuperándolos una vez que los hombres terminan la copulación. Summer y
+        Rick se vieron obligados a visitar el planeta natal después de que una
+        muñeca sexual, comprada por Rick en una casa de empeño interplanetaria,
+        dio a luz a Morty Jr21. Al final, sin embargo, abandonan el planeta,
+        evitando la muerte por juicio1.
+      </p>
+    </div>
+    <form method="POST" action="{% url 'nivel1' %}">
+      <div class="btn-cambio">
+        {% csrf_token %}
+        <button type="submit" name="boton_izquierda" value="izquierda">
+          Botón Izquierda
+        </button>
+        <button type="submit" name="boton_derecha" value="derecha">
+          Botón Derecha
+        </button>
+      </div>
+    </form>
+  </body>
+</html>

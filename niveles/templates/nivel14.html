@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/nivel1.css' %}"
+    />
+  </head>
+  <body>
+    <header>
+      <a href="#" class="logo">Multiverso</a>
+      <ul>
+        <li>
+          <a href="" class="active">CustomWorspace</a>
+        </li>
+        <li>
+          <a href="">Acerca</a>
+        </li>
+        <li>
+          <a href="">Contacto</a>
+        </li>
+      </ul>
+    </header>
+    <section>
+      <!--<img src="Recursos/cielito.jpg" id="cielito">-->
+
+      <img src="{% static 'images/Dimension35C.jpg' %}" class="planeta" />
+      <h2 class="text">Planeta Dimension 35-C</h2>
+      <script
+        type="text/javascript"
+        async
+        src="https://tenor.com/embed.js"
+      ></script>
+    </section>
+    <div class="sect-2">
+      <h2>Viaja a otros planetas</h2>
+      <p>
+        La Dimensión 35-C es una dimensión alternativa que Rick y Morty
+        visitaron en el episodio piloto. La Dimensión 35-C consiste en una
+        versión alternativa y altamente extraña de la Tierra que está gobernada
+        por innumerables extraterrestres. Es un mundo muy colorido lleno de un
+        cielo amarillo, nubes verdes y formaciones rocosas con ojos.
+      </p>
+    </div>
+    <form method="POST" action="{% url 'nivel1' %}">
+      <div class="btn-cambio">
+        {% csrf_token %}
+        <button type="submit" name="boton_izquierda" value="izquierda">
+          Botón Izquierda
+        </button>
+        <button type="submit" name="boton_derecha" value="derecha">
+          Botón Derecha
+        </button>
+      </div>
+    </form>
+  </body>
+</html>
