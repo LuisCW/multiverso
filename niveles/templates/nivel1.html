@@ -55,9 +55,16 @@
                 sorprendentes de la actualidad.
             </p>
         </div>
-        <div class="btn-cambio">
-            <a href="#" class="btn-sigant">Mundo Izquierdo</a>
-            <a href="#" class="btn-sigant">Mundo Derecho</a>
-        </div>
+        <form method="POST" action="{% url 'nivel1' %}">
+            <div class="btn-cambio">
+                {% csrf_token %}
+                <button type="submit" name="boton_izquierda" value="izquierda">
+                    Botón Izquierda
+                </button>
+                <button type="submit" name="boton_derecha" value="derecha">
+                    Botón Derecha
+                </button>
+            </div>
+        </form>
     </body>
 </html>

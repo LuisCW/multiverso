@@ -20,6 +20,5 @@ from django.urls import path
 import niveles.views as views
 
 urlpatterns = [
-    path("", views.inicio, name="home"),
-    path("nivel1/", views.nivel1, name="nivel1"),
+    path("", views.niveles, name="nivel1"),
 ]

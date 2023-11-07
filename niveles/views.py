@@ -1,42 +1,38 @@
 from django.shortcuts import render
+from .grafo import Node
 
 
-def inicio(request):
-    # Definir la estructura del multiverso como un grafo
-    grafo_multiverso = {
-        1: [2],  # Nivel 1 está conectado al Nivel 2
-        2: [3, 4],  # Nivel 2 está conectado a los Niveles 3 y 4
-        3: [5],  # Nivel 3 está conectado al Nivel 5
-        4: [5, 6],  # Nivel 4 está conectado a los Niveles 5 y 6
-        # Agrega más conexiones según sea necesario
-    }
+def niveles(request):
+    if request.method == "POST":
+        if "boton_izquierda" in request.POST:
+            mundo = siguienteMundo(1)
+        elif "boton_derecha" in request.POST:
+            mundo = siguienteMundo(2)
 
-    # Obtener el nivel actual del usuario (por ejemplo, nivel 3)
-    nivel_actual = (
-        3  # Puedes cambiar esto según tus necesidades o obtenerlo de la base de datos
-    )
+        return render(request, mundo)
 
-    # Obtener los niveles desbloqueados hasta el nivel actual
-    niveles_desbloqueados = set()
-    cola = [1]  # Comienza desde el primer nivel
-    while cola:
-        nivel = cola.pop(0)
-        if nivel <= nivel_actual:
-            niveles_desbloqueados.add(nivel)
-            cola.extend(grafo_multiverso.get(nivel, []))
+    else:
+        # Creacion del grafo
+        root = Node("nivel1.html")
 
-    context = {
-        "niveles": range(1, 31),
-    }
+        # Asignacion de los nodos
+        for i in range(2, 37):
+            root.addNode("nivel" + str(i) + ".html")
 
-    return render(request, "index.html", context)
+        global nodo
+        nodo = root
+
+        return render(request, "nivel1.html")
 
 
-def nivel1(request):
-    planets = [
-        {"id": 1, "name": "Earth"},
-        {"id": 2, "name": "Mars"},
-        {"id": 3, "name": "Venus"},
-    ]
+def siguienteMundo(mundo):
+    global nodo
 
-    return render(request, "nivel1.html", {"planets": planets})
+    if mundo == 1:
+        nodo = nodo.left
+        print("Este es el mundo: ", nodo.data)
+        return nodo.data
+    elif mundo == 2:
+        nodo = nodo.right
+        print("Este es el mundo: ", nodo.data)
+        return nodo.data

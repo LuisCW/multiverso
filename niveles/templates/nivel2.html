@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        WTFFFFFFFF
+
+        <form method="POST" action="{% url 'nivel1' %}">
+            <div class="btn-cambio">
+                {% csrf_token %}
+                <button type="submit" name="boton_izquierda" value="izquierda">
+                    Botón Izquierda
+                </button>
+                <button type="submit" name="boton_derecha" value="derecha">
+                    Botón Derecha
+                </button>
+            </div>
+        </form>
+    </body>
+</html>
