@@ -55,5 +55,12 @@
                 sorprendentes de la actualidad.
             </p>
         </div>
+        <ul id="planet-list">
+            {% for planet in planets %}
+            <li id="{{ planet.id }}">{{ planet.name }}</li>
+            {% endfor %}
+        </ul>
+        <button id="check-order">Verificar orden</button>
+        <button id="next-level" disabled>Siguiente nivel</button>
     </body>
 </html>
