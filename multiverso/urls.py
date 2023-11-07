@@ -17,9 +17,9 @@ Including another URLconf
 # urls.py
 from django.contrib import admin
 from django.urls import path
-from niveles.views import inicio, nivel1
+import niveles.views as views
 
 urlpatterns = [
-    path("", inicio, name="home"),
-    path("nivel1/", nivel1, name="nivel1"),
+    path("", views.inicio, name="home"),
+    path("nivel1/", views.nivel1, name="nivel1"),
 ]

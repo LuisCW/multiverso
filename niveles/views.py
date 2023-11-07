@@ -1,4 +1,3 @@
-from django.http import JsonResponse
 from django.shortcuts import render
 
 
@@ -34,19 +33,10 @@ def inicio(request):
 
 
 def nivel1(request):
-    return render(request, "nivel1.html")
+    planets = [
+        {"id": 1, "name": "Earth"},
+        {"id": 2, "name": "Mars"},
+        {"id": 3, "name": "Venus"},
+    ]
 
-
-# Define la lista de planetas con sus nombres
-planets = [(1, "Earth"), (2, "Mars"), (3, "Venus")]
-
-# Define el orden correcto
-correct_order = [1, 3, 2]
-
-
-def check_order(request):
-    planet_ids = request.POST.getlist("order")
-    planets = Planet.objects.in_bulk(planet_ids)
-    sorted_planets = sorted(planets.items(), key=lambda x: x[1].category)
-    correct_order = [planet[0] for planet in sorted_planets]
-    return JsonResponse({"correct": planet_ids == correct_order})
+    return render(request, "nivel1.html", {"planets": planets})

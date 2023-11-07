@@ -104,3 +104,21 @@ section img {
     width: 100px;
     height: 100px;
 }
+
+.btn-cambio {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    height: 100px;
+}
+
+.btn-cambio > a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 2em;
+    background-color: #083651;
+    padding: 10px 20px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
