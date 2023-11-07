@@ -30,3 +30,7 @@ def inicio(request):
     }
 
     return render(request, "index.html", context)
+
+
+def nivel1(request):
+    return render(request, "nivel1.html")
