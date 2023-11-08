@@ -6,10 +6,12 @@
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
 }
+
 body {
     min-height: 100vh;
     background: linear-gradient(#2b1055, #7597de);
 }
+
 header {
     position: absolute;
     top: 0;
@@ -79,6 +81,7 @@ section img {
     height: 100%;
     object-fit: cover;
 }
+
 .text {
     position: absolute;
     color: #fff;
@@ -86,6 +89,7 @@ section img {
     font-size: 7.5vw;
     z-index: 9;
 }
+
 .sect-2 {
     position: relative;
     padding: 100px;
@@ -122,4 +126,12 @@ section img {
     color: #fff;
     font-size: 1.2em;
     cursor: pointer;
+}
+
+.imagen {
+    display: flex;
+    width: 100%;
+    margin: 50px 0;
+    justify-content: space-around;
+    align-items: center;
 }

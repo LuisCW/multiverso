@@ -1,70 +1,63 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="{% static 'css/nivel1.css' %}"
-    />
-  </head>
-  <body>
-    <header>
-      <a href="#" class="logo">Multiverso</a>
-      <ul>
-        <li>
-          <a href="" class="active">CustomWorspace</a>
-        </li>
-        <li>
-          <a href="">Acerca</a>
-        </li>
-        <li>
-          <a href="">Contacto</a>
-        </li>
-      </ul>
-    </header>
-    <section>
-      <!--<img src="Recursos/cielito.jpg" id="cielito">-->
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="{% static 'css/nivel1.css' %}" />
+    </head>
+    <body>
+        <header>
+            <a href="/index" class="logo">Multiverso</a>
+        </header>
+        <section>
+            <!--<img src="Recursos/cielito.jpg" id="cielito">-->
 
-      <img src="{% static 'images/Alphabetrium.jpg' %}" class="planeta" />
-      <h2 class="text">Planeta Alpha Betrium</h2>
-      <script
-        type="text/javascript"
-        async
-        src="https://tenor.com/embed.js"
-      ></script>
-    </section>
-    <div class="sect-2">
-      <h2>Viaja a otros planetas</h2>
-      <p>
-        Alpha Betrium, también conocido como Alphabetrium, es un reino lejano
-        habitado por una antigua raza que se asemeja a gigantescas letras de
-        varios alfabetos1. Está gobernado por un consejo compuesto por Helium-Q,
-        Magnesium-J y Hydrogen-F1. Es el mundo natal de Ice-T, un nativo
-        exiliado de Alphabetrium que se convirtió en un famoso rapero en la
-        Tierra1. Después de que Ice-T salvó a la Tierra de ser destruida por los
-        Cromulons, los ancianos de Alphabetrium recibieron noticias de la
-        galaxia sobre el heroísmo de Ice-T y lo liberaron de su exilio,
-        otorgándole su verdadera forma, Water-T1. Poco después, Alphabetrium fue
-        atacado por los Numbericons y Helium-Q murió cuando un techo se derrumbó
-        sobre él1. A pesar de la abrumadora cantidad de enemigos, Water-T sacó
-        sus armas y salió por las puertas, listo para enfrentarse a los
-        números1.
-      </p>
-    </div>
-    <form method="POST" action="{% url 'nivel1' %}">
-      <div class="btn-cambio">
-        {% csrf_token %}
-        <button type="submit" name="boton_izquierda" value="izquierda">
-          Botón Izquierda
-        </button>
-        <button type="submit" name="boton_derecha" value="derecha">
-          Botón Derecha
-        </button>
-      </div>
-    </form>
-  </body>
+            <img src="{% static 'images/Alphabetrium.jpg' %}" class="planeta" />
+            <h2 class="text">Planeta Alpha Betrium</h2>
+            <script
+                type="text/javascript"
+                async
+                src="https://tenor.com/embed.js"></script>
+        </section>
+        <div class="sect-2">
+            <h2>Viaja a otros planetas</h2>
+            <p>
+                Alpha Betrium, también conocido como Alphabetrium, es un reino
+                lejano habitado por una antigua raza que se asemeja a
+                gigantescas letras de varios alfabetos1. Está gobernado por un
+                consejo compuesto por Helium-Q, Magnesium-J y Hydrogen-F1. Es el
+                mundo natal de Ice-T, un nativo exiliado de Alphabetrium que se
+                convirtió en un famoso rapero en la Tierra1. Después de que
+                Ice-T salvó a la Tierra de ser destruida por los Cromulons, los
+                ancianos de Alphabetrium recibieron noticias de la galaxia sobre
+                el heroísmo de Ice-T y lo liberaron de su exilio, otorgándole su
+                verdadera forma, Water-T1. Poco después, Alphabetrium fue
+                atacado por los Numbericons y Helium-Q murió cuando un techo se
+                derrumbó sobre él1. A pesar de la abrumadora cantidad de
+                enemigos, Water-T sacó sus armas y salió por las puertas, listo
+                para enfrentarse a los números1.
+            </p>
+        </div>
+
+        <div class="imagen">
+            <img src="{% url 'mostrar_grafo' %}" alt="Gráfico de ejemplo" />
+        </div>
+
+        <form method="POST" action="{% url 'nivel1' %}">
+            <div class="btn-cambio">
+                {% csrf_token %}
+                <button type="submit" name="boton_izquierda" value="izquierda">
+                    Botón Izquierda
+                </button>
+                <button type="submit" name="boton_derecha" value="derecha">
+                    Botón Derecha
+                </button>
+            </div>
+        </form>
+    </body>
 </html>

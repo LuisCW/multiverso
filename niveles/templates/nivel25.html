@@ -12,25 +12,12 @@
     </head>
     <body>
         <header>
-            <a href="#" class="logo">Multiverso</a>
-            <ul>
-                <li>
-                    <a href="" class="active">CustomWorspace</a>
-                </li>
-                <li>
-                    <a href="">Acerca</a>
-                </li>
-                <li>
-                    <a href="">Contacto</a>
-                </li>
-            </ul>
+            <a href="/index" class="logo">Multiverso</a>
         </header>
         <section>
             <!--<img src="Recursos/cielito.jpg" id="cielito">-->
 
-            <img
-                src="{% static 'images/Garzorpazorp.png' %}"
-                class="planeta" />
+            <img src="{% static 'images/Garzorpazorp.png' %}" class="planeta" />
             <h2 class="text">Planeta Garzor Pazor</h2>
             <script
                 type="text/javascript"
@@ -55,6 +42,11 @@
                 sorprendentes de la actualidad.
             </p>
         </div>
+
+        <div class="imagen">
+            <img src="{% url 'mostrar_grafo' %}" alt="Gráfico de ejemplo" />
+        </div>
+
         <form method="POST" action="{% url 'nivel1' %}">
             <div class="btn-cambio">
                 {% csrf_token %}

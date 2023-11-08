@@ -12,18 +12,7 @@
     </head>
     <body>
         <header>
-            <a href="#" class="logo">Multiverso</a>
-            <ul>
-                <li>
-                    <a href="" class="active">CustomWorspace</a>
-                </li>
-                <li>
-                    <a href="">Acerca</a>
-                </li>
-                <li>
-                    <a href="">Contacto</a>
-                </li>
-            </ul>
+            <a href="/index" class="logo">Multiverso</a>
         </header>
         <section>
             <!--<img src="Recursos/cielito.jpg" id="cielito">-->
@@ -40,10 +29,26 @@
         <div class="sect-2">
             <h2>Viaja a otros planetas</h2>
             <p>
-                Gromflom Prime es el planeta natal de los Gromflomites¹². Solía ser un buen planeta para vivir, con naturaleza verde y edificios intactos¹. Sin embargo, todo cambió con el caos que siguió a la Crisis de Blemflarck, creada por el humano Rick Sanchez¹. Lo que siguió fue la completa destrucción de la sociedad Gromflomite, resultando en anarquía y sin moneda estándar¹. Con la mayoría de las residencias destruidas, lo que queda es muy valorado por los propietarios y agentes inmobiliarios¹. Parece que la mayoría de las comunidades de viviendas ahora están cercadas, y la única forma de entrar es traerles la "cabeza cortada de uno de los muchos enemigos peligrosos de la junta cooperativa", según un artículo recientemente publicado "You WISH You Lived in These AMAZING Luxury Homes" de Blurtfeed¹.
-
+                Gromflom Prime es el planeta natal de los Gromflomites¹². Solía
+                ser un buen planeta para vivir, con naturaleza verde y edificios
+                intactos¹. Sin embargo, todo cambió con el caos que siguió a la
+                Crisis de Blemflarck, creada por el humano Rick Sanchez¹. Lo que
+                siguió fue la completa destrucción de la sociedad Gromflomite,
+                resultando en anarquía y sin moneda estándar¹. Con la mayoría de
+                las residencias destruidas, lo que queda es muy valorado por los
+                propietarios y agentes inmobiliarios¹. Parece que la mayoría de
+                las comunidades de viviendas ahora están cercadas, y la única
+                forma de entrar es traerles la "cabeza cortada de uno de los
+                muchos enemigos peligrosos de la junta cooperativa", según un
+                artículo recientemente publicado "You WISH You Lived in These
+                AMAZING Luxury Homes" de Blurtfeed¹.
             </p>
         </div>
+
+        <div class="imagen">
+            <img src="{% url 'mostrar_grafo' %}" alt="Gráfico de ejemplo" />
+        </div>
+
         <form method="POST" action="{% url 'nivel1' %}">
             <div class="btn-cambio">
                 {% csrf_token %}

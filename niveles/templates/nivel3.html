@@ -1,73 +1,68 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="{% static 'css/nivel1.css' %}"
-    />
-  </head>
-  <body>
-    <header>
-      <a href="#" class="logo">Multiverso</a>
-      <ul>
-        <li>
-          <a href="" class="active">CustomWorspace</a>
-        </li>
-        <li>
-          <a href="">Acerca</a>
-        </li>
-        <li>
-          <a href="">Contacto</a>
-        </li>
-      </ul>
-    </header>
-    <section>
-      <!--<img src="Recursos/cielito.jpg" id="cielito">-->
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="{% static 'css/nivel1.css' %}" />
+    </head>
+    <body>
+        <header>
+            <a href="/index" class="logo">Multiverso</a>
+        </header>
+        <section>
+            <!--<img src="Recursos/cielito.jpg" id="cielito">-->
 
-      <img src="{% static 'images/Nuptia4.jpg' %}" class="planeta" />
-      <h2 class="text">Planeta Nuptia 4</h2>
-      <script
-        type="text/javascript"
-        async
-        src="https://tenor.com/embed.js"
-      ></script>
-    </section>
-    <div class="sect-2">
-      <h2>Viaja a otros planetas</h2>
-      <p>
-        Nuptia 4 es el instituto de consejería para parejas más exitoso de la
-        galaxia en el universo de Rick y Morty1. El consejero principal del
-        instituto es Glexo Slim Slom1. Rick envía a Beth y Jerry allí para una
-        intensiva de dos días en el episodio "Big Trouble In Little Sanchez"1. A
-        su llegada, se conectan a una máquina que crea manifestaciones físicas
-        de sus percepciones mutuas: los mitólogos de Jerry y Beth1. Los
-        mitólogos fueron colocados en una celda para ser una parada en el tour
-        de mitólogos de los visitantes que tendría lugar poco después1. Sin
-        embargo, mientras observaban los mitólogos de Gar y Zarbadar Gloonch,
-        los mitólogos de Beth y Jerry iniciaron un plan para escapar de su celda
-        y causar estragos en el instituto1. Después de que los visitantes fueron
-        asesinados y el personal sobreviviente escapó, Beth y Jerry se quedaron
-        atrás y lograron derrotar al mitólogo de Beth creando a la Diosa Beth1.
-        Rick luego recogió a Beth y Jerry con el instituto en ruinas1. El nombre
-        del planeta es un juego de palabras con la palabra “nupcial”, que es una
-        palabra para cualquier cosa relacionada con el matrimonio o las bodas1.
-      </p>
-    </div>
-    <form method="POST" action="{% url 'nivel1' %}">
-      <div class="btn-cambio">
-        {% csrf_token %}
-        <button type="submit" name="boton_izquierda" value="izquierda">
-          Botón Izquierda
-        </button>
-        <button type="submit" name="boton_derecha" value="derecha">
-          Botón Derecha
-        </button>
-      </div>
-    </form>
-  </body>
+            <img src="{% static 'images/Nuptia4.jpg' %}" class="planeta" />
+            <h2 class="text">Planeta Nuptia 4</h2>
+            <script
+                type="text/javascript"
+                async
+                src="https://tenor.com/embed.js"></script>
+        </section>
+        <div class="sect-2">
+            <h2>Viaja a otros planetas</h2>
+            <p>
+                Nuptia 4 es el instituto de consejería para parejas más exitoso
+                de la galaxia en el universo de Rick y Morty1. El consejero
+                principal del instituto es Glexo Slim Slom1. Rick envía a Beth y
+                Jerry allí para una intensiva de dos días en el episodio "Big
+                Trouble In Little Sanchez"1. A su llegada, se conectan a una
+                máquina que crea manifestaciones físicas de sus percepciones
+                mutuas: los mitólogos de Jerry y Beth1. Los mitólogos fueron
+                colocados en una celda para ser una parada en el tour de
+                mitólogos de los visitantes que tendría lugar poco después1. Sin
+                embargo, mientras observaban los mitólogos de Gar y Zarbadar
+                Gloonch, los mitólogos de Beth y Jerry iniciaron un plan para
+                escapar de su celda y causar estragos en el instituto1. Después
+                de que los visitantes fueron asesinados y el personal
+                sobreviviente escapó, Beth y Jerry se quedaron atrás y lograron
+                derrotar al mitólogo de Beth creando a la Diosa Beth1. Rick
+                luego recogió a Beth y Jerry con el instituto en ruinas1. El
+                nombre del planeta es un juego de palabras con la palabra
+                “nupcial”, que es una palabra para cualquier cosa relacionada
+                con el matrimonio o las bodas1.
+            </p>
+        </div>
+
+        <div class="imagen">
+            <img src="{% url 'mostrar_grafo' %}" alt="Gráfico de ejemplo" />
+        </div>
+
+        <form method="POST" action="{% url 'nivel1' %}">
+            <div class="btn-cambio">
+                {% csrf_token %}
+                <button type="submit" name="boton_izquierda" value="izquierda">
+                    Botón Izquierda
+                </button>
+                <button type="submit" name="boton_derecha" value="derecha">
+                    Botón Derecha
+                </button>
+            </div>
+        </form>
+    </body>
 </html>

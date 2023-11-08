@@ -1,88 +1,84 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="{% static 'css/nivel1.css' %}"
-    />
-  </head>
-  <body>
-    <header>
-      <a href="#" class="logo">Multiverso</a>
-      <ul>
-        <li>
-          <a href="" class="active">CustomWorspace</a>
-        </li>
-        <li>
-          <a href="">Acerca</a>
-        </li>
-        <li>
-          <a href="">Contacto</a>
-        </li>
-      </ul>
-    </header>
-    <section>
-      <!--<img src="Recursos/cielito.jpg" id="cielito">-->
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="{% static 'css/nivel1.css' %}" />
+    </head>
+    <body>
+        <header>
+            <a href="/index" class="logo">Multiverso</a>
+        </header>
+        <section>
+            <!--<img src="Recursos/cielito.jpg" id="cielito">-->
 
-      <img src="{% static 'images/Gramuflack.jpg' %}" class="planeta" />
-      <h2 class="text">Planeta Gramuflack</h2>
-      <script
-        type="text/javascript"
-        async
-        src="https://tenor.com/embed.js"
-      ></script>
-    </section>
-    <div class="sect-2">
-      <h2>Viaja a otros planetas</h2>
-      <p>
-        Gramuflack era un planeta habitado ubicado en algún lugar de la
-        galaxia1. Fue destruido cuando Heistotron robó el núcleo del planeta1.
-        Poco después de volverse rebelde, Heistotron construyó un robot gigante
-        para robar el núcleo de Gramuflack1. El robot se acercó al planeta
-        disfrazado de un fontanero llamado “Hank”, alegando que venía a revisar
-        la presión del agua del planeta1. Heistotron colocó una cámara secreta
-        gigante en una ciudad, matando a 57,000 personas1. Luego, Heistotron
-        cambió el disfraz a una entrega de pizza y dejó caer una caja de pizza
-        gigante encima de otra ciudad, aplastándola y matando a todos los
-        ciudadanos1. La caja comenzó a perforar el planeta, destruyendo la mitad
-        de él, terminando con la gravedad del planeta y matando a todas las
-        criaturas antes de extraer el núcleo del planeta1. Los habitantes de
-        Gramuflack eran seres inteligentes, así como animales primitivos1. Los
-        “Gramuflacks” eran criaturas humanoides bípedas con piel amarilla y ojos
-        grandes y bulbosos1. Tenían una sola boca y dos brazos, que terminaban
-        en manos con tres dedos1. Llevaban ropa y podían crecer vello facial1.
-        La población en Gramuflack vivía en ciudades de varios tamaños, llenas
-        de casas y tiendas1. Los modos de transporte incluían automóviles,
-        helicópteros y barcos1. Al menos un país en Gramuflack estaba gobernado
-        por un líder militar1. Este líder con bigote celebraba desfiles
-        militares anuales mientras se transmitía a sí mismo en una pantalla
-        grande1. Las ciudades estaban iluminadas por luces eléctricas en el
-        pavimento y muchos edificios de formas extrañas construidos con grandes
-        bombillas de luz1. El planeta estaba cubierto tanto de agua como de
-        tierra, que se dividían en varios continentes1. Se podían encontrar
-        árboles que se asemejan a pinos y palmeras en diferentes áreas del
-        planeta, así como surtidos de flores1. Algunos de los animales
-        encontrados en Gramuflack eran similares a las especies encontradas en
-        la Tierra, como ardillas, zorros y pájaros1. Otro animal cuadrúpedo
-        verde con un solo ojo y astas vagaba por los bosques salvajes antes de
-        la destrucción del planeta1.
-      </p>
-    </div>
-    <form method="POST" action="{% url 'nivel1' %}">
-      <div class="btn-cambio">
-        {% csrf_token %}
-        <button type="submit" name="boton_izquierda" value="izquierda">
-          Botón Izquierda
-        </button>
-        <button type="submit" name="boton_derecha" value="derecha">
-          Botón Derecha
-        </button>
-      </div>
-    </form>
-  </body>
+            <img src="{% static 'images/Gramuflack.jpg' %}" class="planeta" />
+            <h2 class="text">Planeta Gramuflack</h2>
+            <script
+                type="text/javascript"
+                async
+                src="https://tenor.com/embed.js"></script>
+        </section>
+        <div class="sect-2">
+            <h2>Viaja a otros planetas</h2>
+            <p>
+                Gramuflack era un planeta habitado ubicado en algún lugar de la
+                galaxia1. Fue destruido cuando Heistotron robó el núcleo del
+                planeta1. Poco después de volverse rebelde, Heistotron construyó
+                un robot gigante para robar el núcleo de Gramuflack1. El robot
+                se acercó al planeta disfrazado de un fontanero llamado “Hank”,
+                alegando que venía a revisar la presión del agua del planeta1.
+                Heistotron colocó una cámara secreta gigante en una ciudad,
+                matando a 57,000 personas1. Luego, Heistotron cambió el disfraz
+                a una entrega de pizza y dejó caer una caja de pizza gigante
+                encima de otra ciudad, aplastándola y matando a todos los
+                ciudadanos1. La caja comenzó a perforar el planeta, destruyendo
+                la mitad de él, terminando con la gravedad del planeta y matando
+                a todas las criaturas antes de extraer el núcleo del planeta1.
+                Los habitantes de Gramuflack eran seres inteligentes, así como
+                animales primitivos1. Los “Gramuflacks” eran criaturas
+                humanoides bípedas con piel amarilla y ojos grandes y bulbosos1.
+                Tenían una sola boca y dos brazos, que terminaban en manos con
+                tres dedos1. Llevaban ropa y podían crecer vello facial1. La
+                población en Gramuflack vivía en ciudades de varios tamaños,
+                llenas de casas y tiendas1. Los modos de transporte incluían
+                automóviles, helicópteros y barcos1. Al menos un país en
+                Gramuflack estaba gobernado por un líder militar1. Este líder
+                con bigote celebraba desfiles militares anuales mientras se
+                transmitía a sí mismo en una pantalla grande1. Las ciudades
+                estaban iluminadas por luces eléctricas en el pavimento y muchos
+                edificios de formas extrañas construidos con grandes bombillas
+                de luz1. El planeta estaba cubierto tanto de agua como de
+                tierra, que se dividían en varios continentes1. Se podían
+                encontrar árboles que se asemejan a pinos y palmeras en
+                diferentes áreas del planeta, así como surtidos de flores1.
+                Algunos de los animales encontrados en Gramuflack eran similares
+                a las especies encontradas en la Tierra, como ardillas, zorros y
+                pájaros1. Otro animal cuadrúpedo verde con un solo ojo y astas
+                vagaba por los bosques salvajes antes de la destrucción del
+                planeta1.
+            </p>
+        </div>
+
+        <div class="imagen">
+            <img src="{% url 'mostrar_grafo' %}" alt="Gráfico de ejemplo" />
+        </div>
+
+        <form method="POST" action="{% url 'nivel1' %}">
+            <div class="btn-cambio">
+                {% csrf_token %}
+                <button type="submit" name="boton_izquierda" value="izquierda">
+                    Botón Izquierda
+                </button>
+                <button type="submit" name="boton_derecha" value="derecha">
+                    Botón Derecha
+                </button>
+            </div>
+        </form>
+    </body>
 </html>

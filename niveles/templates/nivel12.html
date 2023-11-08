@@ -1,69 +1,62 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="{% static 'css/nivel1.css' %}"
-    />
-  </head>
-  <body>
-    <header>
-      <a href="#" class="logo">Multiverso</a>
-      <ul>
-        <li>
-          <a href="" class="active">CustomWorspace</a>
-        </li>
-        <li>
-          <a href="">Acerca</a>
-        </li>
-        <li>
-          <a href="">Contacto</a>
-        </li>
-      </ul>
-    </header>
-    <section>
-      <!--<img src="Recursos/cielito.jpg" id="cielito">-->
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="{% static 'css/nivel1.css' %}" />
+    </head>
+    <body>
+        <header>
+            <a href="/index" class="logo">Multiverso</a>
+        </header>
+        <section>
+            <!--<img src="Recursos/cielito.jpg" id="cielito">-->
 
-      <img src="{% static 'images/Blips_chitz.jpg' %}" class="planeta" />
-      <h2 class="text">Planeta Blips and Chitz</h2>
-      <script
-        type="text/javascript"
-        async
-        src="https://tenor.com/embed.js"
-      ></script>
-    </section>
-    <div class="sect-2">
-      <h2>Viaja a otros planetas</h2>
-      <p>
-        Blips and Chitz es un arcade intergaláctico en el multiverso de Rick y
-        Morty1. Se presenta en el episodio "Mortynight Run"1. En Blips and
-        Chitz, Morty juega un juego de realidad virtual llamado “Roy: A Life
-        Well Lived”, donde vive toda la vida de un hombre llamado Roy hasta la
-        edad de 55 años1. Cuando Morty regresó, estaba furioso con Rick por
-        venderle un arma al asesino Krombopulos Michael por una sola tarde en
-        Blips and Chitz1. Rick no le importaba lo que Morty tenía que decir y
-        procedió a tomar su turno en "Roy: A Life Well Lived"1. No se nos dice
-        dónde está Blips and Chitz, pero los eventos de “Mortynight Run”
-        sugieren que es algo así como un puesto fronterizo de la Federación
-        Galáctica y el garaje en el que Morty se encuentra por primera vez con
-        Krombopulos Michael1.
-      </p>
-    </div>
-    <form method="POST" action="{% url 'nivel1' %}">
-      <div class="btn-cambio">
-        {% csrf_token %}
-        <button type="submit" name="boton_izquierda" value="izquierda">
-          Botón Izquierda
-        </button>
-        <button type="submit" name="boton_derecha" value="derecha">
-          Botón Derecha
-        </button>
-      </div>
-    </form>
-  </body>
+            <img src="{% static 'images/Blips_chitz.jpg' %}" class="planeta" />
+            <h2 class="text">Planeta Blips and Chitz</h2>
+            <script
+                type="text/javascript"
+                async
+                src="https://tenor.com/embed.js"></script>
+        </section>
+        <div class="sect-2">
+            <h2>Viaja a otros planetas</h2>
+            <p>
+                Blips and Chitz es un arcade intergaláctico en el multiverso de
+                Rick y Morty1. Se presenta en el episodio "Mortynight Run"1. En
+                Blips and Chitz, Morty juega un juego de realidad virtual
+                llamado “Roy: A Life Well Lived”, donde vive toda la vida de un
+                hombre llamado Roy hasta la edad de 55 años1. Cuando Morty
+                regresó, estaba furioso con Rick por venderle un arma al asesino
+                Krombopulos Michael por una sola tarde en Blips and Chitz1. Rick
+                no le importaba lo que Morty tenía que decir y procedió a tomar
+                su turno en "Roy: A Life Well Lived"1. No se nos dice dónde está
+                Blips and Chitz, pero los eventos de “Mortynight Run” sugieren
+                que es algo así como un puesto fronterizo de la Federación
+                Galáctica y el garaje en el que Morty se encuentra por primera
+                vez con Krombopulos Michael1.
+            </p>
+        </div>
+
+        <div class="imagen">
+            <img src="{% url 'mostrar_grafo' %}" alt="Gráfico de ejemplo" />
+        </div>
+
+        <form method="POST" action="{% url 'nivel1' %}">
+            <div class="btn-cambio">
+                {% csrf_token %}
+                <button type="submit" name="boton_izquierda" value="izquierda">
+                    Botón Izquierda
+                </button>
+                <button type="submit" name="boton_derecha" value="derecha">
+                    Botón Derecha
+                </button>
+            </div>
+        </form>
+    </body>
 </html>

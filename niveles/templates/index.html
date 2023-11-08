@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Multiverse of DS</title>
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="{% static 'css/nivel1.css' %}" />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="{% static 'css/grafo.css' %}" />
+    </head>
+    <body>
+        <header>
+            <a href="/index" class="logo">Multiverso</a>
+        </header>
+        <section>
+            <img src="{% static 'images/wallpaper.jpg' %}" class="planeta" />
+
+            <h1 class="text">Multiverse of DS</h1>
+            <script
+                type="text/javascript"
+                async
+                src="https://tenor.com/embed.js"></script>
+        </section>
+
+        <div class="sect-2">
+            <h2>Rick and Morty</h2>
+            <p>
+                En este multiverso se pueden visitar 36 mundos/dimensiones que
+                han aparecido en Rick and Morty. Es posible viajar entre
+                universos gracias a los botones que se encontrarán en la parte
+                inferior de la página. Además, se podrá experimentar creando y
+                eliminando universos (Pero cuidado con aquellos que sólo tienen
+                una forma de llegar). El grafo del multiverso creado es el
+                siguiente:
+            </p>
+        </div>
+
+        <div class="imagen">
+            <img src="{% url 'mostrar_grafo' %}" alt="Gráfico de ejemplo" />
+        </div>
+
+        <form method="GET" action="{% url 'nivel1' %}">
+            <div class="btn-cambio">
+                {% csrf_token %}
+                <button type="submit" name="nivel1">Comenzar</button>
+            </div>
+        </form>
+    </body>
+</html>

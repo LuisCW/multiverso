@@ -20,5 +20,7 @@ from django.urls import path
 import niveles.views as views
 
 urlpatterns = [
-    path("", views.niveles, name="nivel1"),
+    path("nivel1/", views.niveles, name="nivel1"),
+    path("", views.inicio, name="index"),
+    path("mostrar-grafo/", views.mostrar_grafo, name="mostrar_grafo"),
 ]
