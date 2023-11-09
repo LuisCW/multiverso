@@ -4,23 +4,30 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+
+        <title>Multiverse of DS</title>
         <link
             rel="stylesheet"
             type="text/css"
-            href="{% static 'css/nivel1.css' %}" />
+            href="{% static 'css/style.css' %}" />
     </head>
     <body>
         <header>
-            <a href="/index" class="logo">Multiverso</a>
+            <a href="/index" class="logo">
+                Multiverso
+                <div><img src="{% static 'images/LogoRickAndMorty.png' %}" class="imgLogo"></div>
+            </a>
         </header>
         <section>
             <!--<img src="Recursos/cielito.jpg" id="cielito">-->
 
             <img
-                src="{% static 'images/AlphaCentaurus.png' %}"
+                src="{% static 'images/PlanetaEngranaje.jpg' %}"
                 class="planeta" />
-            <h2 class="text">Planeta Alpha Centaurus</h2>
+            <h2 class="text">Planeta engranaje</h2>
             <script
                 type="text/javascript"
                 async
@@ -29,36 +36,31 @@
         <div class="sect-2">
             <h2>Viaja a otros planetas</h2>
             <p>
-                "Rick y Morty" es una serie de animación que se ha destacado por
-                la creatividad y la diversidad de los mundos que ha explorado a
-                lo largo de sus temporadas. Creada por Dan Harmon y Justin
-                Roiland, la serie ha llevado a los personajes principales, el
-                científico loco Rick Sánchez y su nieto Morty, a través de
-                innumerables realidades alternativas y dimensiones. Desde un
-                mundo de Cronenbergs hasta un universo en el que la moneda es
-                literalmente la vida de las personas, "Rick y Morty" ha
-                construido un multiverso lleno de lugares extraños, a menudo
-                peligrosos, y ocasionalmente absurdos. Estos mundos permiten a
-                la serie explorar temas profundos y absurdos a la vez, lo que la
-                convierte en una de las series de animación más originales y
-                sorprendentes de la actualidad.
+                Gear World o Mundo de engranajes, es un planeta ubicado en el Gear System . Es el hogar de Gearhead y otros Gear People , y era parte de la Federación Galáctica antes de su caída. Gear World hizo su primera aparición en el  episodio de Rick y Morty , " Mortynight Run ".
+            </p>
+            <div class="grafooo">
+                <img src="{% url 'mostrar_grafo' %}" alt="Gráfico de ejemplo" />
+            </div>
+            
+
+            <form method="POST" action="{% url 'nivel1' %}">
+                <div class="btn-cambio">
+                    {% csrf_token %}
+                    <button type="submit" name="boton_izquierda" value="izquierda">
+                        <span class="material-symbols-outlined">
+                            arrow_back
+                            <p>Nodo izquierdo   </p>
+                        </span>
+                    </button>
+                    <button type="submit" name="boton_derecha" value="derecha">
+                        <span class="material-symbols-outlined">
+                            arrow_forward
+                            <p>Nodo derecho</p>
+                        </span>
+                    </button>
+                </div>
+            </form>
             </p>
         </div>
-
-        <div class="imagen">
-            <img src="{% url 'mostrar_grafo' %}" alt="Gráfico de ejemplo" />
-        </div>
-
-        <form method="POST" action="{% url 'nivel1' %}">
-            <div class="btn-cambio">
-                {% csrf_token %}
-                <button type="submit" name="boton_izquierda" value="izquierda">
-                    Botón Izquierda
-                </button>
-                <button type="submit" name="boton_derecha" value="derecha">
-                    Botón Derecha
-                </button>
-            </div>
-        </form>
     </body>
 </html>

@@ -4,15 +4,22 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+
+        <title>Multiverse of DS</title>
         <link
             rel="stylesheet"
             type="text/css"
-            href="{% static 'css/nivel1.css' %}" />
+            href="{% static 'css/style.css' %}" />
     </head>
     <body>
         <header>
-            <a href="/index" class="logo">Multiverso</a>
+            <a href="/index" class="logo">
+                Multiverso
+                <div><img src="{% static 'images/LogoRickAndMorty.png' %}" class="imgLogo"></div>
+            </a>
         </header>
         <section>
             <!--<img src="Recursos/cielito.jpg" id="cielito">-->
@@ -34,22 +41,29 @@
                 Kalaxian , que cuando se inhalan producen un efecto similar al
                 de una droga.
             </p>
-        </div>
-
-        <div class="imagen">
-            <img src="{% url 'mostrar_grafo' %}" alt="Gráfico de ejemplo" />
-        </div>
-
-        <form method="POST" action="{% url 'nivel1' %}">
-            <div class="btn-cambio">
-                {% csrf_token %}
-                <button type="submit" name="boton_izquierda" value="izquierda">
-                    Botón Izquierda
-                </button>
-                <button type="submit" name="boton_derecha" value="derecha">
-                    Botón Derecha
-                </button>
+            <div class="grafooo">
+                <img src="{% url 'mostrar_grafo' %}" alt="Gráfico de ejemplo" />
             </div>
-        </form>
+            
+
+            <form method="POST" action="{% url 'nivel1' %}">
+                <div class="btn-cambio">
+                    {% csrf_token %}
+                    <button type="submit" name="boton_izquierda" value="izquierda">
+                        <span class="material-symbols-outlined">
+                            arrow_back
+                            <p>Nodo izquierdo   </p>
+                        </span>
+                    </button>
+                    <button type="submit" name="boton_derecha" value="derecha">
+                        <span class="material-symbols-outlined">
+                            arrow_forward
+                            <p>Nodo derecho</p>
+                        </span>
+                    </button>
+                </div>
+            </form>
+            </p>
+        </div>
     </body>
 </html>
