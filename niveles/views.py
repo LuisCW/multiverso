@@ -29,7 +29,14 @@ def niveles(request):
     else:
         nodo_actual = 1
 
-        return render(request, "nivel1.html", {"nodo_actual": nodo_actual})
+        if (nodo_actual in graph.graph) and (len(graph.graph[nodo_actual]) > 1):
+            return render(
+                request,
+                "nivel" + str(nodo_actual) + ".html",
+                {"nodo_actual": nodo_actual},
+            )
+        else:
+            return redirect("/404")
 
 
 def inicio(request):
@@ -96,6 +103,7 @@ def inicio(request):
         graph.add_edge(33, 36)
         graph.add_edge(34, 36)
         graph.add_edge(35, 36)
+        graph.add_edge(36, 1)
 
         nodos_creados = {}
 
@@ -178,3 +186,18 @@ def eliminar_nodo(request):
 
 def error404(request):
     return render(request, "404.html")
+
+
+def nuevos_mundos(request):
+    global nodos_creados, nodo_actual
+
+    nodo = request.GET.get("nodo")
+
+    titulo = nodos_creados[int(nodo)][0]
+    descripcion = nodos_creados[int(nodo)][1]
+
+    nodo_actual = int(nodo)
+
+    return render(
+        request, "mundoTemplate.html", {"titulo": titulo, "descripcion": descripcion}
+    )

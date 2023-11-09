@@ -26,4 +26,5 @@ urlpatterns = [
     path("nuevonodo/", views.nuevo_nodo, name="nuevonodo"),
     path("eliminarnodo/", views.eliminar_nodo, name="eliminarnodo"),
     path("404/", views.error404, name="error404"),
+    path("nuevos_mundos/", views.nuevos_mundos, name="nuevos_mundos"),
 ]
