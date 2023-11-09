@@ -123,3 +123,11 @@ def mostrar_grafo(request):
     response = HttpResponse(content_type="image/png")
     response.write(buffer.getvalue())
     return response
+
+
+def nuevo_nodo(request):
+    if request.method == "POST":
+        pass
+
+    else:
+        return render(request, "nuevoNodo.html")

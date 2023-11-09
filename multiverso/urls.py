@@ -23,4 +23,5 @@ urlpatterns = [
     path("nivel1/", views.niveles, name="nivel1"),
     path("", views.inicio, name="index"),
     path("mostrar-grafo/", views.mostrar_grafo, name="mostrar_grafo"),
+    path("nuevo-nodo/", views.nuevo_nodo, name="nuevo_nodo"),
 ]

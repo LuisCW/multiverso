@@ -5,9 +5,11 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+            rel="stylesheet" />
 
         <title>Multiverse of DS</title>
         <link
@@ -21,9 +23,13 @@
     </head>
     <body>
         <header>
-            <a href="/index" class="logo">
+            <a href="" class="logo">
                 Multiverso
-                <div><img src="{% static 'images/LogoRickAndMorty.png' %}" class="imgLogo"></div>
+                <div>
+                    <img
+                        src="{% static 'images/LogoRickAndMorty.png' %}"
+                        class="imgLogo" />
+                </div>
             </a>
         </header>
         <section>
@@ -46,25 +52,46 @@
                 eliminando universos (Pero cuidado con aquellos que sólo tienen
                 una forma de llegar). El grafo del multiverso creado es el
                 siguiente:
-
-                
             </p>
             <div class="grafooo">
                 <img src="{% url 'mostrar_grafo' %}" alt="Gráfico de ejemplo" />
             </div>
-            
 
-            <form method="GET" action="{% url 'nivel1' %}">
-                <div class="btn-cambio">
-                    {% csrf_token %}
-                    <button type="submit" name="nivel1">
+            <div class="btn-container">
+                <div class="btn-nodos">
+                    <a href="nuevo-nodo/">
+                        <button type="submit" name="nivel1">
+                            <span class="material-symbols-outlined">
+                                add_circle
+                                <p>Añadir nodo</p>
+                            </span>
+                        </button>
+                    </a>
+                </div>
+
+                <form method="GET" action="{% url 'nivel1' %}">
+                    <div class="btn-cambio">
+                        {% csrf_token %}
+                        <button type="submit" name="nivel1">
                             <span class="material-symbols-outlined">
                                 arrow_forward
-                                <p>Nodo derecho</p>
+                                <p>Continuar</p>
                             </span>
-                    </button>
+                        </button>
+                    </div>
+                </form>
+
+                <div class="btn-nodos">
+                    <a href="">
+                        <button type="submit" name="nivel1">
+                            <span class="material-symbols-outlined">
+                                delete
+                                <p>Eliminar nodo</p>
+                            </span>
+                        </button>
+                    </a>
                 </div>
-            </form>
-        </div>  
+            </div>
+        </div>
     </body>
 </html>
