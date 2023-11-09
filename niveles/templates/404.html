@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+            rel="stylesheet" />
+
+        <title>Multiverse of DS</title>
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="{% static 'css/style.css' %}" />
+    </head>
+    <body>
+        <header>
+            <a href="/?first=1" class="logo">
+                Multiverso
+                <div>
+                    <img
+                        src="{% static 'images/LogoRickAndMorty.png' %}"
+                        class="imgLogo" />
+                </div>
+            </a>
+        </header>
+        <section>
+            <img src="{% static 'images/404.jpg' %}" class="planeta" />
+
+            <h1 class="text" style="color: #000">Error 404</h1>
+            <script
+                type="text/javascript"
+                async
+                src="https://tenor.com/embed.js"></script>
+        </section>
+
+        <div class="sect-2">
+            <h2>No se encontró este nodo</h2>
+        </div>
+    </body>
+</html>

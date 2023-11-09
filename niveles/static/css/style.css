@@ -8,8 +8,7 @@
 }
 
 body {
-    min-height: 200vh;
-    background: linear-gradient(#2b1055, #7597de);
+    height: 100vh;
 }
 header {
     position: absolute;

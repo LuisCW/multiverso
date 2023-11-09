@@ -53,14 +53,55 @@
                 una forma de llegar). El grafo del multiverso creado es el
                 siguiente:
             </p>
+
             <div class="grafooo">
                 <img src="{% url 'mostrar_grafo' %}" alt="Gráfico de ejemplo" />
+                {% if nodos_creados %}
+                <div style="border-collapse: collapse; height: 100%">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th
+                                    style="
+                                        border: 1px solid #000;
+                                        padding: 8px;
+                                        text-align: left;
+                                        color: #ffffff;
+                                    ">
+                                    Mundos Creados
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for valor in nodos_creados %}
+                            <tr>
+                                <td
+                                    style="
+                                        border: 1px solid #000;
+                                        padding: 8px;
+                                        text-align: left;
+                                    ">
+                                    <a
+                                        href="nuevos_mundos"
+                                        style="
+                                            text-decoration: none;
+                                            color: #ab2929;
+                                        "
+                                        >Visitar mundo {{ valor }}</a
+                                    >
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                {% endif %}
             </div>
 
             <div class="btn-container">
                 <div class="btn-nodos">
-                    <a href="nuevo-nodo/">
-                        <button type="submit" name="nivel1">
+                    <a href="nuevonodo/">
+                        <button>
                             <span class="material-symbols-outlined">
                                 add_circle
                                 <p>Añadir nodo</p>
@@ -82,7 +123,7 @@
                 </form>
 
                 <div class="btn-nodos">
-                    <a href="">
+                    <a href="eliminarnodo/">
                         <button type="submit" name="nivel1">
                             <span class="material-symbols-outlined">
                                 delete

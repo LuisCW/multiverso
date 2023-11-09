@@ -5,32 +5,52 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Agregar nodo</title>
-        \
         <link
             rel="stylesheet"
             type="text/css"
-            href="{% static 'css/nuevoNodo.css' %}" />
+            href="{% static 'css/nuevonodo.css' %}" />
     </head>
     <body>
         <div class="form-container">
-            <form action="/submit">
-                <label for="titulo">Título:</label><br>
-                <input type="text" id="titulo" name="titulo"><br>
-                <label for="descripcion">Descripción:</label><br>
-                <textarea id="descripcion" name="descripcion"></textarea><br>
-                <h3>Checklist:</h3>
-                <div>
-                  <ul style="list-style-type:none;">
-                    ${Array.from({length: 36}, (_, i) => `
-                      <li>
-                        <input type="checkbox" id="elemento${i+1}" name="elemento${i+1}">
-                        <label for="elemento${i+1}">Elemento ${i+1}</label>
-                      </li>
-                    `).join('')}
-                  </ul>
+            <form method="POST" action="{% url 'nuevonodo' %}">
+                <label for="titulo">Título:</label>
+                <input type="text" id="titulo" name="titulo" />
+                <label for="descripcion">Descripción:</label>
+                <textarea id="descripcion" name="descripcion"></textarea>
+                <h3>Coneccion izquierda:</h3>
+                <div class="checklist-container">
+                    {% for punto in mundos %}
+                    <label for="checklist-izquierdo-{{ punto }}">
+                        <input
+                            type="radio"
+                            id="checklist-izquierdo-{{ punto }}"
+                            name="checklist_izquierdo"
+                            value="{{ punto }}" />
+                        {{ punto }}
+                    </label>
+                    {% endfor %}
                 </div>
-                <input type="submit" value="Enviar">
-              </form>
+
+                <h3>Coneccion derecha:</h3>
+                <div class="checklist-container">
+                    {% for punto in mundos %}
+                    <label for="checklist-derecho-{{ punto }}">
+                        <input
+                            type="radio"
+                            id="checklist-derecho-{{ punto }}"
+                            name="checklist_derecho"
+                            value="{{ punto }}" />
+                        {{ punto }}
+                    </label>
+                    {% endfor %}
+                </div>
+                <div class="button-container">
+                    {% csrf_token %}
+                    <button type="submit" name="nuevoNodo">
+                        <p>Crear nuevo nodo</p>
+                    </button>
+                </div>
+            </form>
         </div>
     </body>
 </html>

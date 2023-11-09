@@ -23,5 +23,7 @@ urlpatterns = [
     path("nivel1/", views.niveles, name="nivel1"),
     path("", views.inicio, name="index"),
     path("mostrar-grafo/", views.mostrar_grafo, name="mostrar_grafo"),
-    path("nuevo-nodo/", views.nuevo_nodo, name="nuevo_nodo"),
+    path("nuevonodo/", views.nuevo_nodo, name="nuevonodo"),
+    path("eliminarnodo/", views.eliminar_nodo, name="eliminarnodo"),
+    path("404/", views.error404, name="error404"),
 ]

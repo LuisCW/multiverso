@@ -16,5 +16,13 @@ class Graph:
         else:
             return []
 
+    def remove_node(self, node):
+        if node in self.graph:
+            del self.graph[node]
+            for other_node in self.graph:
+                self.graph[other_node] = [
+                    neighbor for neighbor in self.graph[other_node] if neighbor != node
+                ]
+
     def __str__(self):
         return str(self.graph)
