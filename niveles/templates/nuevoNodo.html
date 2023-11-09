@@ -1,4 +1,4 @@
-{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -9,11 +9,28 @@
         <link
             rel="stylesheet"
             type="text/css"
-            href="{% static 'css/nuevoNodo.css' %}" />
+            href="nuevoNodo.css" />
     </head>
     <body>
         <div class="form-container">
-            <form action=""></form>
+            <form action="/submit">
+                <label for="titulo">Título:</label><br>
+                <input type="text" id="titulo" name="titulo"><br>
+                <label for="descripcion">Descripción:</label><br>
+                <textarea id="descripcion" name="descripcion"></textarea><br>
+                <h3>Checklist:</h3>
+                <div>
+                  <ul style="list-style-type:none;">
+                    ${Array.from({length: 36}, (_, i) => `
+                      <li>
+                        <input type="checkbox" id="elemento${i+1}" name="elemento${i+1}">
+                        <label for="elemento${i+1}">Elemento ${i+1}</label>
+                      </li>
+                    `).join('')}
+                  </ul>
+                </div>
+                <input type="submit" value="Enviar">
+              </form>
         </div>
     </body>
 </html>
